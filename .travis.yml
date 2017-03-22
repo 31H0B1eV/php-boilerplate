@@ -1,0 +1,19 @@
+dist: trusty
+sudo: required
+
+language: php
+
+php:
+  - 7.1
+
+addons:
+    code_climate:
+        repo_token: 7720f1896bbbb5ae1d1644f829d5ee1d1c5aeb32fe189aa6143ff336c1b85ff4
+
+before_script:
+  - mysql -u root -e "SET PASSWORD FOR 'root'@'localhost' = PASSWORD('')"
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS boilerplate;'
+  - composer self-update
+  - composer install --prefer-source --no-interaction --dev
+
+script: phpunit --configuration ./phpunit.xml
