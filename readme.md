@@ -10,9 +10,13 @@ to help reduce the time required when starting a new piece of code.
 Project based on [laradock](https://github.com/laradock/laradock) with little tweaks. It use laradock container for build workspace, it can be changed but there is no any reason for now. This is development setup and exists not only for simplify my developer life but it also playing field for my own research with different tools, so sometimes bugs or missunderstandings can be here. Please think twice before use it in production.
 
 ### Setup:
+- `mkdir <project_folder_name> && cd <project_folder_name>`
+- `git clone --bare <repo_url> .git`
+- `git config --bool core.bare false`
+- `git reset --hard`
 - First change applications volumes path in docker-compose.yml
-- Next rename nginx/sites/php-clean-boilerplate.php file and add correct server_name and root
-- next run containers, example: `docker-compose up -d nginx mysql` (or build it before: `docker-compose up --build -d nginx`);
+- Rename nginx/sites/php-clean-boilerplate.php file and add correct server_name and root
+- Run containers, example: `docker-compose up -d nginx mysql` (or build it before: `docker-compose up --build -d nginx`);
 
 ### Using:
 - `docker-compose up -d nginx mysql`
