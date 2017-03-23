@@ -15,7 +15,7 @@ Project based on [laradock](https://github.com/laradock/laradock) with little tw
 - `git config --bool core.bare false`
 - `git reset --hard`
 - First change applications volumes path in docker-compose.yml
-- Rename nginx/sites/php-clean-boilerplate.php file and add correct server_name and root
+- Rename nginx/sites/default.conf file and add correct server_name and root | also add related record to hosts file.
 - Run containers, example: `docker-compose up -d nginx mysql` (or build it before: `docker-compose up --build -d nginx`);
 
 ### Using:
